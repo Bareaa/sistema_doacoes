@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Sistema completo de doações com backend em Node.js e frontend em React",
   "private": true,
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "dev:backend": "cd backend && npm run dev",
@@ -48,8 +44,8 @@
     "concurrently": "^7.6.0"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+    "node": "18.x",
+    "npm": "9.x"
   },
   "repository": {
     "type": "git",

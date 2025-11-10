@@ -89,6 +89,8 @@ node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 
 ## 🟠 AWS Elastic Beanstalk
 
+⚠️ **IMPORTANTE**: AWS EB requer configuração especial. Veja **[AWS_EB_DEPLOY.md](./AWS_EB_DEPLOY.md)** para guia completo.
+
 ### Passo a Passo:
 
 1. **Instalar EB CLI**
@@ -96,37 +98,47 @@ node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
    pip install awsebcli
    ```
 
-2. **Inicializar Projeto**
+2. **Commit Alterações** (correções para AWS EB já aplicadas)
+   ```bash
+   git add .
+   git commit -m "fix: configuração AWS EB"
+   ```
+
+3. **Inicializar Projeto**
    ```bash
    eb init -p node.js sistema-doacoes
    ```
 
-3. **Criar Ambiente**
+4. **Criar Ambiente**
    ```bash
-   eb create production
+   eb create production-env
    ```
 
-4. **Configurar RDS PostgreSQL**
+5. **Configurar RDS PostgreSQL** (ou use banco externo)
    - Console AWS → RDS → Create Database
    - PostgreSQL, Free Tier
    - Anote o endpoint e credenciais
+   - **OU** use Render.com/Supabase (mais fácil)
 
-5. **Configurar Variáveis**
+6. **Configurar Variáveis**
    ```bash
    eb setenv NODE_ENV=production
    eb setenv DATABASE_URL=postgresql://user:pass@endpoint:5432/dbname
-   eb setenv JWT_SECRET=sua-chave-secreta
+   eb setenv JWT_SECRET=$(node -e "console.log(require('crypto').randomBytes(64).toString('hex'))")
    ```
 
-6. **Deploy**
+7. **Deploy**
    ```bash
    eb deploy
    ```
 
-7. **Abrir Aplicação**
+8. **Verificar**
    ```bash
+   eb logs
    eb open
    ```
+
+**Problemas?** Consulte **[AWS_EB_DEPLOY.md](./AWS_EB_DEPLOY.md)** para troubleshooting detalhado.
 
 ---
 
