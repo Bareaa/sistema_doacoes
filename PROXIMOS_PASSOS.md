@@ -2,19 +2,19 @@
 
 ## ✅ O Que Foi Feito
 
-Identifiquei e corrigi o problema do AWS Elastic Beanstalk:
+Identifiquei e corrigi TODOS os problemas do AWS Elastic Beanstalk:
 
 1. ❌ **Problema**: npm workspaces não funciona no AWS EB
-2. ❌ **Problema**: Versão do Node.js não estava sendo respeitada
-3. ✅ **Solução**: Configuração específica para AWS EB criada
+2. ❌ **Problema**: NodeCommand e NodeVersion deprecados (não funcionam mais!)
+3. ✅ **Solução**: Configuração MODERNA para AWS EB (2025) criada
 
 ## 📁 Arquivos Criados/Modificados
 
 ### Novos Arquivos
-- `.ebextensions/nodecommand.config` - Configuração Node.js
-- `.ebextensions/npm.config` - Instalação customizada
+- `.platform/hooks/prebuild/01_install_dependencies.sh` - Build moderno ⭐
+- `.ebextensions/environment.config` - Variáveis de ambiente
 - `.npmrc` - Configuração npm
-- `AWS_EB_DEPLOY.md` - Guia completo AWS EB
+- `AWS_EB_DEPLOY_V2.md` - Guia ATUALIZADO 2025 ⭐
 - `AWS_EB_FIX.md` - Explicação das correções
 
 ### Arquivos Modificados
@@ -102,7 +102,7 @@ Alternativa simples ao Render:
 2. **QUICK_COMMANDS.md** - Comandos úteis
 
 ### Para AWS EB
-3. **AWS_EB_DEPLOY.md** - Guia completo AWS EB
+3. **AWS_EB_DEPLOY_V2.md** ⭐ - Guia ATUALIZADO 2025
 4. **AWS_EB_FIX.md** - Explicação das correções
 
 ### Referência Completa
