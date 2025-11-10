@@ -161,50 +161,31 @@ npm run test:ci
 
 ## 🚀 Deploy
 
-Este projeto está pronto para deploy em produção com suporte a múltiplas plataformas.
+### 🎯 Comece Aqui
 
-### 🎯 Início Rápido
+👉 **[LEIA_PRIMEIRO.md](./LEIA_PRIMEIRO.md)** - Guia de deploy
 
-**Primeira vez fazendo deploy?** Comece aqui:
-
-👉 **[DEPLOY_README.md](./DEPLOY_README.md)** - Deploy em 5 minutos no Render.com
-
-### 📚 Documentação Completa
-
-- **[DEPLOY_INDEX.md](./DEPLOY_INDEX.md)** - Índice de toda documentação de deploy
-- **[DEPLOY_README.md](./DEPLOY_README.md)** - Guia rápido (5 minutos)
-- **[DEPLOY.md](./DEPLOY.md)** - Guia completo de deploy
-- **[DEPLOY_PLATFORMS.md](./DEPLOY_PLATFORMS.md)** - Instruções por plataforma
-- **[DEPLOY_CHECKLIST.md](./DEPLOY_CHECKLIST.md)** - Checklist completo
-- **[QUICK_COMMANDS.md](./QUICK_COMMANDS.md)** - Comandos úteis
+👉 **[DEPLOY_README.md](./DEPLOY_README.md)** - Deploy em 5 minutos (Render.com)
 
 ### ⚡ Quick Start
 
 ```bash
-# 1. Build para deploy
-npm run build:deploy
-
-# 2. Gerar JWT_SECRET
+# 1. Gerar JWT_SECRET
 npm run generate:jwt
 
-# 3. Seguir guia da plataforma escolhida
+# 2. Seguir guia: DEPLOY_README.md
 ```
 
-### 🌐 Plataformas Suportadas
+### 🌐 Plataforma Recomendada
 
-- ✅ **Render.com** (Recomendado - mais fácil)
-- ✅ **Railway.app** (Simples e rápido)
-- ✅ **Heroku** (Tradicional)
-- ✅ **AWS Elastic Beanstalk** (Escalável)
+✅ **Render.com** - Deploy em 5 minutos, PostgreSQL grátis incluído
 
-### 🏗️ Arquitetura de Deploy
+### 🏗️ Arquitetura
 
-O projeto usa uma arquitetura monolítica onde:
 - Backend serve a API REST em `/api/*`
 - Backend serve o frontend buildado em produção
-- Migrações do banco são executadas automaticamente no start
+- Migrações executadas automaticamente no start
 - Um único processo gerencia toda a aplicação
-- Procfile configurado para deploy automático
 
 ## 🤝 Contribuição
 

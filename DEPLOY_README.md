@@ -1,6 +1,6 @@
-# 🚀 Deploy Rápido - Sistema de Doações
+# 🚀 Deploy Rápido - Render.com
 
-Guia simplificado para fazer deploy do seu sistema de doações em minutos.
+Guia para fazer deploy em 5 minutos.
 
 ## ⚡ Deploy em 5 Minutos (Render.com)
 
