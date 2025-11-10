@@ -14,13 +14,14 @@
     "install:backend": "cd backend && npm install",
     "install:frontend": "cd frontend && npm install",
     "install:all": "npm run install:backend && npm run install:frontend",
-    "build": "npm run build:backend && npm run build:frontend",
+    "build": "npm run build:frontend",
     "build:backend": "cd backend && npm run build",
     "build:frontend": "cd frontend && npm run build",
+    "build:deploy": "node build-for-deploy.js",
     "test": "npm run test:backend && npm run test:frontend",
     "test:backend": "cd backend && npm test",
     "test:frontend": "cd frontend && npm test",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start": "cd backend && npm start",
     "start:backend": "cd backend && npm start",
     "start:frontend": "cd frontend && npm start",
     "clean": "npm run clean:backend && npm run clean:frontend",
@@ -29,7 +30,9 @@
     "migrate": "cd backend && npm run migrate",
     "migrate:undo": "cd backend && npm run migrate:undo",
     "seed": "cd backend && npm run seed",
-    "db:reset": "cd backend && npm run db:reset"
+    "db:reset": "cd backend && npm run db:reset",
+    "postinstall": "npm run install:all && npm run build:frontend",
+    "generate:jwt": "node -e \"console.log(require('crypto').randomBytes(64).toString('hex'))\""
   },
   "keywords": [
     "donation",

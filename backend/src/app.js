@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./config/swaggerConfig');
 
@@ -61,13 +62,24 @@ app.use('/api/campanhas', campanhaRoutes);
 app.use('/api', doacaoRoutes); // Donation routes include both /campanhas/:id/doacoes and /doacoes/:id
 app.use('/api', comentarioRoutes); // Comment routes include both /campanhas/:id/comentarios and /comentarios/:id
 
-// 404 handler for undefined routes
-app.use('*', (req, res) => {
-  res.status(404).json({
-    message: 'Endpoint não encontrado',
-    requestId: req.requestId
+// Serve static files from frontend build in production
+if (process.env.NODE_ENV === 'production') {
+  const frontendPath = path.join(__dirname, '../../frontend/dist');
+  app.use(express.static(frontendPath));
+  
+  // Handle React Router - send all non-API requests to index.html
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
   });
-});
+} else {
+  // 404 handler for undefined routes in development
+  app.use('*', (req, res) => {
+    res.status(404).json({
+      message: 'Endpoint não encontrado',
+      requestId: req.requestId
+    });
+  });
+}
 
 // Error handling middleware (must be last)
 app.use(errorMiddleware);

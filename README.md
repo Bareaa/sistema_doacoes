@@ -161,13 +161,50 @@ npm run test:ci
 
 ## 🚀 Deploy
 
-### Backend (Render + NeonDB)
-1. Configure o banco PostgreSQL no NeonDB
-2. Faça deploy no Render
-3. Configure as variáveis de ambiente
-4. Acesse a documentação em `/api-docs`
+Este projeto está pronto para deploy em produção com suporte a múltiplas plataformas.
 
-Veja o [Guia de Deploy](./backend/DEPLOYMENT.md) para instruções detalhadas.
+### 🎯 Início Rápido
+
+**Primeira vez fazendo deploy?** Comece aqui:
+
+👉 **[DEPLOY_README.md](./DEPLOY_README.md)** - Deploy em 5 minutos no Render.com
+
+### 📚 Documentação Completa
+
+- **[DEPLOY_INDEX.md](./DEPLOY_INDEX.md)** - Índice de toda documentação de deploy
+- **[DEPLOY_README.md](./DEPLOY_README.md)** - Guia rápido (5 minutos)
+- **[DEPLOY.md](./DEPLOY.md)** - Guia completo de deploy
+- **[DEPLOY_PLATFORMS.md](./DEPLOY_PLATFORMS.md)** - Instruções por plataforma
+- **[DEPLOY_CHECKLIST.md](./DEPLOY_CHECKLIST.md)** - Checklist completo
+- **[QUICK_COMMANDS.md](./QUICK_COMMANDS.md)** - Comandos úteis
+
+### ⚡ Quick Start
+
+```bash
+# 1. Build para deploy
+npm run build:deploy
+
+# 2. Gerar JWT_SECRET
+npm run generate:jwt
+
+# 3. Seguir guia da plataforma escolhida
+```
+
+### 🌐 Plataformas Suportadas
+
+- ✅ **Render.com** (Recomendado - mais fácil)
+- ✅ **Railway.app** (Simples e rápido)
+- ✅ **Heroku** (Tradicional)
+- ✅ **AWS Elastic Beanstalk** (Escalável)
+
+### 🏗️ Arquitetura de Deploy
+
+O projeto usa uma arquitetura monolítica onde:
+- Backend serve a API REST em `/api/*`
+- Backend serve o frontend buildado em produção
+- Migrações do banco são executadas automaticamente no start
+- Um único processo gerencia toda a aplicação
+- Procfile configurado para deploy automático
 
 ## 🤝 Contribuição
 
