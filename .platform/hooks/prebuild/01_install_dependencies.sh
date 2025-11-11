@@ -14,6 +14,8 @@ cd /var/app/staging/frontend
 npm ci
 
 echo "Building frontend..."
-npx vite build
+npm run build
+
+cd /var/app/staging
 
 echo "✅ Dependencies installed and frontend built successfully!"
