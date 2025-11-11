@@ -11,9 +11,9 @@ npm ci --omit=dev
 
 echo "Installing frontend dependencies..."
 cd /var/app/staging/frontend
-npm install
+npm ci
 
 echo "Building frontend..."
-npm run build
+npx vite build
 
 echo "✅ Dependencies installed and frontend built successfully!"
