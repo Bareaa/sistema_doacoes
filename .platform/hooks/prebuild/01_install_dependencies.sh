@@ -7,7 +7,7 @@ npm install --omit=dev
 
 echo "Installing frontend dependencies..."
 cd /var/app/staging/frontend
-npm install
+npm install --production=false
 
 echo "Building frontend..."
 npm run build
