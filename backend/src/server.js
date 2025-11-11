@@ -1,6 +1,4 @@
 require('dotenv').config();
-const path = require('path');
-const express = require('express');
 const app = require('./app');
 const sequelize = require('./config/connection');
 
@@ -66,15 +64,6 @@ async function startServer() {
       console.error(`[${new Date().toISOString()}] ❌ Failed to connect to database. Exiting...`);
       process.exit(1);
     }
-    
-    // ✅ Serve the built frontend (React)
-    const frontendPath = path.join(__dirname, '../../frontend/dist');
-    app.use(express.static(frontendPath));
-    
-    // Handle React Router - send all non-API requests to index.html
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(frontendPath, 'index.html'));
-    });
     
     // Start HTTP server
     const server = app.listen(PORT, () => {

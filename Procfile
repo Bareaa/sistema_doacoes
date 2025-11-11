@@ -1,1 +1,1 @@
-web: cd backend && npx sequelize-cli db:migrate && node src/server.js
+web: cd backend && node src/server.js
