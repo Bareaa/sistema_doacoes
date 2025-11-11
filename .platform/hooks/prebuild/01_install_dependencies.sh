@@ -11,10 +11,10 @@ npm ci --omit=dev
 
 echo "Installing frontend dependencies..."
 cd /var/app/staging/frontend
-npm ci
+npm install
 
 echo "Building frontend..."
-npm run build
+NODE_ENV=production npm run build
 
 cd /var/app/staging
 
