@@ -31,6 +31,7 @@ Lá tem o passo a passo completo para Render.com.
 ## 📁 Arquivos de Deploy
 
 - **DEPLOY_README.md** ⭐ - Guia completo Render.com (COMECE AQUI)
+- **VERIFICACAO_DEPLOY.md** - Confirma que está tudo pronto
 - **DEPLOY.md** - Resumo geral
 - **AWS_EB_NAO_RECOMENDADO.md** - Por que não usar AWS EB
 - **Procfile** - Configuração de start
